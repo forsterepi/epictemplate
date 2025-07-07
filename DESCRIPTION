@@ -1,0 +1,15 @@
+Package: epictemplate
+Title: Create Projects with Templates for Epidemiology
+Version: 0.1.0
+Authors@R: 
+    person("Felix", "Forster", , "felix.forster@med.uni-muenchen.de", role = c("aut", "cre","cph"),
+           comment = c(ORCID = "0000-0002-3670-9244"))
+Description: Includes templates for creating new projects in epidemiology.
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    testthat (>= 3.0.0),
+    withr
+Config/testthat/edition: 3
+RoxygenNote: 7.3.2
