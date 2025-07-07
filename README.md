@@ -1,6 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+[![R-CMD-check](https://github.com/forsterepi/epictemplate/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/forsterepi/epictemplate/actions/workflows/R-CMD-check.yaml)
+
 # epictemplate <img src="man/figures/logo.png" align="right" height="139"/>
 
 `epictemplate` provides a template for creating new projects. It can be
