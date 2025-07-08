@@ -47,7 +47,11 @@ new_file <- function() {
     # Get project name and path
     try(project_path <- rprojroot::find_root(rprojroot::is_rstudio_project))
     if (!exists("project_path")) {
-      stop("This is not an RStudio project!")
+      rstudioapi::showDialog(
+        title = "No RStudio project",
+        message = "This is not an RStudio project!"
+      )
+      return(invisible(NULL))
     }
     project_name <- basename(project_path)
 
