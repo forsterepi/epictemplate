@@ -9,27 +9,11 @@ test_that("create_epictemplate_project works", {
     expect_true(file.exists(file.path(path, "Input")))
     expect_true(file.exists(file.path(path, "Output")))
     expect_true(file.exists(file.path(path, "R")))
-    expect_true(file.exists(file.path(path, "Templates")))
     expect_true(file.exists(file.path(path, "Stan")))
 
     expect_true(file.exists(file.path(path, "R", "0_packages.R")))
     expect_true(file.exists(file.path(path, "R", "0_functions.R")))
-    expect_true(file.exists(file.path(
-      path, "Templates",
-      "template_fun.R"
-    )))
-    expect_true(file.exists(file.path(
-      path, "Templates",
-      "template_script.R"
-    )))
-    expect_true(file.exists(file.path(
-      path, "Templates",
-      "template_subworkflow.R"
-    )))
-    expect_true(file.exists(file.path(
-      path, "Templates",
-      "template_workflow.R"
-    )))
+    expect_true(file.exists(file.path(path, "R", "0_options.R")))
 
     expect_true(file.exists(file.path(path, "workflow_main.R")))
     expect_true(file.exists(file.path(path, ".lintr")))

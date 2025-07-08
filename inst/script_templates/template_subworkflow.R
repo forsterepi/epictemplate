@@ -1,8 +1,8 @@
 # Title -------------------------------------------------------------------
 # Project Title: <<add_package_title>>
-# Subworkflow Title: <<add subworkflow name>>
+# Subworkflow Title: <<add_subworkflow_name>>
 
-# Subworkflow of: <<add workflow title>>
+# Subworkflow of: <<add_workflow_title>>
 
 # Subworkflow Description: <<add subworkflow description>>
 

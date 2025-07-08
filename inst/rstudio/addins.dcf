@@ -1,0 +1,4 @@
+Name: Create new file
+Description: Creates new script, function or (sub)workflow
+Binding: new_file
+Interactive: false

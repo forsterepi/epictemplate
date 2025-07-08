@@ -89,14 +89,6 @@ The created project includes the following folders and files:
   - `0_functions.R`: Loads all user-defined functions in folder
     `Functions`.
 - `Stan` (folder): Contains .stan files. (See Options)
-- `Templates` (folder): Contains template .R files for the 4 levels of
-  the code hierarchie. One way of using the templates is: In the “Files”
-  pane in RStudio, check the box in front of the template you want to
-  use, click on “More” and select “Copy To…”.
-  - `template_fun.R`: Template for user-defined functions
-  - `template_script.R`: Template for scripts
-  - `template_subworkflow.R`: Template for subworkflows
-  - `template_workflow.R`: Template for workflows
 - `workflow_main.R`: A default workflow file. If you need multiple
   workflows, change the name from “main” to whatever you need.
 - `.lintr`: Default specifications for static code analysis, i.e.,
@@ -104,6 +96,12 @@ The created project includes the following folders and files:
   install the package and use “Addins/Lint current file” in RStudio or
   `lint()` you check the active file, or `lint_dir()` to check the whole
   project.
+
+## New file
+
+Create a new script, function, workflow, or subworkflow with function
+`new_file()`, which is also accessible via a RStudio Addin. Simply
+follow the instructions in the dialog boxes.
 
 ## Installation
 

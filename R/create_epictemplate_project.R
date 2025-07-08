@@ -21,79 +21,12 @@ create_epictemplate_project <- function(path, ...) {
   dir.create(file.path(path, "Input"))
   dir.create(file.path(path, "Output"))
   dir.create(file.path(path, "R"))
-  dir.create(file.path(path, "Templates"))
 
   if (stan) {
     dir.create(file.path(path, "Stan"))
   }
 
   # Create files
-  ## Templates/template_fun.R
-  new_file_template_fun <- file.path(path, "Templates", "template_fun.R")
-  file.create(new_file_template_fun)
-  new_file_template_fun_code <- readLines(system.file("script_templates",
-    "template_fun.R",
-    package = "epictemplate"
-  ))
-  new_file_template_fun_code <- gsub(
-    pattern = "<<add_package_title>>",
-    replacement = project_name,
-    x = new_file_template_fun_code
-  )
-  writeLines(new_file_template_fun_code, con = new_file_template_fun)
-
-  ## Templates/template_script.R
-  new_file_template_script <- file.path(path, "Templates", "template_script.R")
-  file.create(new_file_template_script)
-  new_file_template_script_code <- readLines(system.file("script_templates",
-    "template_script.R",
-    package = "epictemplate"
-  ))
-  new_file_template_script_code <- gsub(
-    pattern = "<<add_package_title>>",
-    replacement = project_name,
-    x = new_file_template_script_code
-  )
-  writeLines(new_file_template_script_code, con = new_file_template_script)
-
-  ## Templates/template_subworkflow.R
-  new_file_template_subworkflow <- file.path(
-    path, "Templates",
-    "template_subworkflow.R"
-  )
-  file.create(new_file_template_subworkflow)
-  new_file_template_subworkflow_code <- readLines(
-    system.file("script_templates",
-      "template_subworkflow.R",
-      package = "epictemplate"
-    )
-  )
-  new_file_template_subworkflow_code <- gsub(
-    pattern = "<<add_package_title>>",
-    replacement = project_name,
-    x = new_file_template_subworkflow_code
-  )
-  writeLines(new_file_template_subworkflow_code,
-    con = new_file_template_subworkflow
-  )
-
-  ## Templates/template_workflow.R
-  new_file_template_workflow <- file.path(
-    path, "Templates",
-    "template_workflow.R"
-  )
-  file.create(new_file_template_workflow)
-  new_file_template_workflow_code <- readLines(system.file("script_templates",
-    "template_workflow.R",
-    package = "epictemplate"
-  ))
-  new_file_template_workflow_code <- gsub(
-    pattern = "<<add_package_title>>",
-    replacement = project_name,
-    x = new_file_template_workflow_code
-  )
-  writeLines(new_file_template_workflow_code, con = new_file_template_workflow)
-
   ## workflow_main.R
   new_file_workflow_main <- file.path(path, "workflow_main.R")
   file.create(new_file_workflow_main)
@@ -147,6 +80,27 @@ create_epictemplate_project <- function(path, ...) {
     x = new_file_script_functions_code
   )
   writeLines(new_file_script_functions_code, con = new_file_script_functions)
+
+  ## R/0_options.R
+  new_file_script_options <- file.path(path, "R", "0_options.R")
+  file.create(new_file_script_options)
+  if (stan) {
+    new_file_script_options_code <- readLines(system.file("script_templates",
+      "0_options_stan.R",
+      package = "epictemplate"
+    ))
+  } else {
+    new_file_script_options_code <- readLines(system.file("script_templates",
+      "0_options.R",
+      package = "epictemplate"
+    ))
+  }
+  new_file_script_options_code <- gsub(
+    pattern = "<<add_package_title>>",
+    replacement = project_name,
+    x = new_file_script_options_code
+  )
+  writeLines(new_file_script_options_code, con = new_file_script_options)
 
   ## .lintr
   new_file_lintr <- file.path(path, ".lintr")

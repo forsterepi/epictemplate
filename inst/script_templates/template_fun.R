@@ -1,11 +1,11 @@
 # Title -------------------------------------------------------------------
 # Project Title: <<add_package_title>>
-# Function Title: <<add function name>>
+# Function Title: <<add_function_name>>
 
 # Function Description: <<add function description>>
 
 
-fun_fun <- function() {
+<<add_function_name>> <- function() {
   # Check input
 
 

@@ -7,14 +7,14 @@
 
 # Step 0: Introduction ----------------------------------------------------
 
-## Create path
-project_path <- getwd()
-
 ## Load package environment
-source("R/0_packages.R")
+source(file.path("R", "0_packages.R"))
 
 ## Load functions
-source("R/0_functions.R")
+source(file.path("R", "0_functions.R"))
+
+## Set options
+source(file.path("R", "0_options.R"))
 
 
 # New section -------------------------------------------------------------

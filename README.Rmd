@@ -37,7 +37,7 @@ To achive a "few-click code structure", the code is **structured hierarchically*
 -   Workflow: `workflow_[workflow name].R` (e.g., `workflow_model.R` for the workflow that creates the model)
 -   Script: `[workflow name]_[chapter number]_[if necessary, script number within chapter]_[script name].R` (e.g., `model_1_1_scc_bin.R` for a script in the workflow "model" which is used in "chapter 1" of the workflow and which is the first script to be sourced in "chapter 1" and has the name "scc_bin")
 -   Subworkflow: `[workflow name]_[step number]_sub_[subworkflow name].R` (e.g., `model_2_sub_dag.R` for a subworkflow that creates DAGs)
--   Scripts in Subworkflows: `[workflow name]``_[chapter number]_``sub_[subworkflow name][subchapter number in subworkflow]_[if necessary, script number within subchapter]_[script name].R` (e.g., `model_2_sub_dag_1_2_create_dag.R` for a script in subworkflow "dag" which is used in "subchapter 1" of the subworkflow and which is the second script to be scourced in "subchapter 1" and has the name "create_dag")
+-   Scripts in Subworkflows: ``` [workflow name]``_[chapter number]_``sub_[subworkflow name][subchapter number in subworkflow]_[if necessary, script number within subchapter]_[script name].R ``` (e.g., `model_2_sub_dag_1_2_create_dag.R` for a script in subworkflow "dag" which is used in "subchapter 1" of the subworkflow and which is the second script to be scourced in "subchapter 1" and has the name "create_dag")
 -   Functions: `[Function name].R` (e.g., `fun_example.R` for function `fun_example()`)
 
 ### Options
@@ -57,13 +57,12 @@ The created project includes the following folders and files:
     -   `0_packages.R`: Loads packages. Package `conflicted` is used to solve conflicts due to multiple functions from different packages having the same name.
     -   `0_functions.R`: Loads all user-defined functions in folder `Functions`.
 -   `Stan` (folder): Contains .stan files. (See Options)
--   `Templates` (folder): Contains template .R files for the 4 levels of the code hierarchie. One way of using the templates is: In the "Files" pane in RStudio, check the box in front of the template you want to use, click on "More" and select "Copy To...".
-    -   `template_fun.R`: Template for user-defined functions
-    -   `template_script.R`: Template for scripts
-    -   `template_subworkflow.R`: Template for subworkflows
-    -   `template_workflow.R`: Template for workflows
 -   `workflow_main.R`: A default workflow file. If you need multiple workflows, change the name from "main" to whatever you need.
 -   `.lintr`: Default specifications for static code analysis, i.e., checking code without running it, using `lintr`. For using `lintr`, install the package and use "Addins/Lint current file" in RStudio or `lint()` you check the active file, or `lint_dir()` to check the whole project.
+
+## New file
+
+Create a new script, function, workflow, or subworkflow with function `new_file()`, which is also accessible via a RStudio Addin. Simply follow the instructions in the dialog boxes.
 
 ## Installation
 
