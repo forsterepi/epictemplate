@@ -45,7 +45,10 @@ new_file <- function() {
     }
 
     # Get project name and path
-    project_path <- rprojroot::find_root(rprojroot::is_rstudio_project)
+    try(project_path <- rprojroot::find_root(rprojroot::is_rstudio_project))
+    if (!exists("project_path")) {
+      stop("This is not an RStudio project!")
+    }
     project_name <- basename(project_path)
 
     # Create file
@@ -72,7 +75,7 @@ new_file <- function() {
         )
         writeLines(new_file_code, con = new_file)
         ## Open file
-        utils::file.edit(file.path(project_path, "R", file_path))
+        rstudioapi::documentOpen(file.path(project_path, "R", file_path))
       } else {
         rstudioapi::showDialog(
           title = "File exists",
@@ -102,7 +105,7 @@ new_file <- function() {
         )
         writeLines(new_file_code, con = new_file)
         ## Open file
-        utils::file.edit(file.path(project_path, "Functions", file_path))
+        rstudioapi::documentOpen(file.path(project_path, "Functions", file_path))
       } else {
         rstudioapi::showDialog(
           title = "File exists",
@@ -132,7 +135,7 @@ new_file <- function() {
         )
         writeLines(new_file_code, con = new_file)
         ## Open file
-        utils::file.edit(file.path(project_path, file_path))
+        rstudioapi::documentOpen(file.path(project_path, file_path))
       } else {
         rstudioapi::showDialog(
           title = "File exists",
@@ -177,7 +180,7 @@ new_file <- function() {
         )
         writeLines(new_file_code, con = new_file)
         ## Open file
-        utils::file.edit(file.path(project_path, "R", file_path))
+        rstudioapi::documentOpen(file.path(project_path, "R", file_path))
       } else {
         rstudioapi::showDialog(
           title = "File exists",
