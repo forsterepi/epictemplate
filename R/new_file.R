@@ -164,7 +164,7 @@ new_file <- function() {
         new_file <- file.path(project_path, "R", file_path)
         file.create(new_file)
         new_file_code <- readLines(system.file("script_templates",
-          "template_script.R",
+          "template_subworkflow.R",
           package = "epictemplate"
         ))
         new_file_code <- gsub(
