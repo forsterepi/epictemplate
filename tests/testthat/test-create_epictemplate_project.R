@@ -5,28 +5,15 @@ test_that("create_epictemplate_project works", {
     path <- getwd()
     expect_no_error(create_epictemplate_project(path = path, stan = stan))
 
-    expect_true(file.exists(file.path(path, "Functions")))
     expect_true(file.exists(file.path(path, "Input")))
     expect_true(file.exists(file.path(path, "Output")))
     expect_true(file.exists(file.path(path, "R")))
     expect_true(file.exists(file.path(path, "Stan")))
 
-    expect_true(file.exists(file.path(path, "R", "0_packages.R")))
-    expect_true(file.exists(file.path(path, "R", "0_functions.R")))
-    expect_true(file.exists(file.path(path, "R", "0_options.R")))
+    expect_true(file.exists(file.path(path, "R", "0_init.R")))
 
-    expect_true(file.exists(file.path(path, "workflow_main.R")))
+    expect_true(file.exists(file.path(path, "report.qmd")))
     expect_true(file.exists(file.path(path, ".lintr")))
-
-    expect_equal(
-      readLines(file.path(path, "workflow_main.R"))[2],
-      paste0("# Project Title: ", basename(path))
-    )
-
-    expect_equal(
-      readLines(file.path(path, "R", "0_packages.R"))[14],
-      "library(cmdstanr)"
-    )
   })
 
   stan <- FALSE
@@ -37,11 +24,6 @@ test_that("create_epictemplate_project works", {
 
     expect_false(file.exists(file.path(path, "Stan")))
 
-    expect_true(file.exists(file.path(path, "R", "0_packages.R")))
-
-    expect_equal(
-      readLines(file.path(path, "R", "0_packages.R"))[15],
-      "conflicts_prefer("
-    )
+    expect_true(file.exists(file.path(path, "R", "0_init.R")))
   })
 })

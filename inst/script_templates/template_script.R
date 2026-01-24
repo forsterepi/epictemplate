@@ -1,5 +1,5 @@
 # Title -------------------------------------------------------------------
-# Project Title: <<add_package_title>>
+# Project Title: <<add_project_name>>
 # Script Title: <<add_script_name>>
 
 # Script Description: <<add script description>>

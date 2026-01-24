@@ -1,0 +1,133 @@
+---
+title: "report"
+date: today
+format: html
+editor: visual
+number-sections: true
+toc: true
+toc-title: Contents
+---
+
+# Study objective
+
+x
+
+## Questions
+
+x
+
+# Setup
+
+First, we load required R packages, set some options, and initialise the cache.
+
+```{r}
+#| code-fold: true
+#| code-summary: "Loading packages and setting options"
+#| file: R/0_init.R
+#| message: false
+#| warning: false
+```
+
+# Pre-data
+
+## Concept
+
+x
+
+## Causal model
+
+### Module 1: x {#sec-simmod1}
+
+x
+
+#### Assumptions
+
+| Assumption | Justification |
+|------------|---------------|
+| x          | x             |
+
+: Assumptions of simulation module "Outcome misclassification without predictor" {#tbl-simmod1-asmp}
+
+#### Variables
+
+| Variable | Description |
+|----------|-------------|
+| $x$      | x           |
+
+: Variables of simulation module "Outcome misclassification without predictor" {#tbl-simmod1-var}
+
+#### Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| $x$       | x           |
+
+: Parameters of simulation module "Outcome misclassification without predictor" {#tbl-simmod1-par}
+
+#### Technical details
+
+$$
+\begin{align}
+x &\sim Bernoulli(x) \\
+y &= x
+\end{align}
+$$
+
+```{dot}
+//| label: fig-graph-simmod1
+//| fig-cap: 'Graph of simulation module "x" (Ellipse: Variable, Diamond: Parameter)'
+//| fig-height: 2
+digraph sim_mod_gr_1 {
+  rankdir = LR
+  bgcolor = "transparent"
+  
+  from_other_module [label = <From other<SUB>module</SUB>>, shape = box]      
+  var [label = <Var<SUB>1</SUB>>]      
+  par [label = <A parameter>, shape = diamond]      
+  
+  from_other_module -> var   
+  par -> var 
+}
+```
+
+#### Code
+
+```{r}
+#| code-fold: true
+#| code-summary: "Create module 'x' in simcausal"
+#| file: R/pre_1_1_x.R
+```
+
+## Simulation
+
+### Testing
+
+First, we test if the simulation modules have been implemented correctly. For this, we simulate some data based on pre-specified parameter values and evaluate if we can recover the expected values.
+
+#### Module 1: x
+
+x
+
+### Simulation 1: x
+
+x (see @sec-simmod1)
+
+# Data
+
+## Prepare data
+
+x
+
+## Descriptives
+
+x
+
+## Multiple Imputation
+
+x
+
+# Post-data
+
+x
+
+# References {.unnumbered}
