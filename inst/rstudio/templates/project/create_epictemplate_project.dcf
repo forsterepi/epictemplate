@@ -1,7 +1,6 @@
 Binding: create_epictemplate_project
 Title: New project with epictemplate
 Caption: Create new project with epictemplate
-OpenFiles: workflow_main.R
 Icon: icon.png
 
 Parameter: stan
