@@ -46,8 +46,8 @@ options(mc.cores = 4)
 # options(warnPartialMatchArgs = TRUE)
 # ggplot2::theme_set(ggplot2::theme_bw())
 # options(simcausal.verbose = FALSE)
-# progressr::handler(global = TRUE)
-# progressr::handler("cli")
+# progressr::handlers(global = TRUE)
+# progressr::handlers("cli")
 
 
 # Init cache --------------------------------------------------------------
