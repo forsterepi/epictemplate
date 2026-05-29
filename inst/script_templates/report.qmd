@@ -120,7 +120,7 @@ x
 
 x
 
-## Evaluate predictions by causal model in data
+## Evaluate causal model
 
 x
 
